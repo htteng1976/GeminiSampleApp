@@ -1,6 +1,6 @@
 # GeminiSampleApp
 
-- Ask Gemini CLI to generate an Android sample app containing scaffold, floating button and bottom navigation with two items
+- Ask [Gemini CLI](https://github.com/google-gemini/gemini-cli) to generate an Android sample app containing scaffold, floating button and bottom navigation with two items
 <img width="1155" height="717" alt="截圖 2025-08-08 下午2 25 36" src="https://github.com/user-attachments/assets/cc9bfdae-1d7c-45a3-b785-81d91b164e6e" />
 <br/><br/><br/>
 
