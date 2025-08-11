@@ -4,9 +4,9 @@ sequenceDiagram
         actor Developer
         actor Gemini CLI
         Developer->>Gemini CLI: Create a Sample App
-        Gemini CLI->>Developer: Project Response
+        Gemini CLI-->>Developer: Project Response
         Developer->>Gemini CLI: Build Failed
-        Gemini CLI->>Developer: Bugfix
+        Gemini CLI-->>Developer: Bugfix
 ```
 
 - Ask [Gemini CLI](https://github.com/google-gemini/gemini-cli) to generate an Android sample app containing scaffold, floating button and bottom navigation with two items
