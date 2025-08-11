@@ -1,4 +1,13 @@
 # GeminiSampleApp
+```mermaid
+sequenceDiagram
+        actor Developer
+        actor Gemini CLI
+        Developer->>Gemini CLI: Create a Sample App
+        Gemini CLI->>Developer: Project Response
+        Developer->>Gemini CLI: Build Failed
+        Gemini CLI->>Developer: Bugfix
+```
 
 - Ask [Gemini CLI](https://github.com/google-gemini/gemini-cli) to generate an Android sample app containing scaffold, floating button and bottom navigation with two items
 <img width="1155" height="717" alt="截圖 2025-08-08 下午2 25 36" src="https://github.com/user-attachments/assets/cc9bfdae-1d7c-45a3-b785-81d91b164e6e" />
