@@ -51,3 +51,10 @@ sequenceDiagram
 
 - Final Result: (No floating button and navigation details)
 <img width="1080" height="2400" alt="Screenshot_20250811_082436" src="https://github.com/user-attachments/assets/702fe3c8-1ddd-4b2a-8fef-eb980b960e53" />
+
+
+
+[Gemini Code Assist](https://developers.google.com/gemini-code-assist/docs/review-github-code)
+<img width="1406" height="711" alt="截圖 2025-09-05 上午11 47 10" src="https://github.com/user-attachments/assets/fb94fe64-5ca7-4329-987a-9640abd4dc2c" />
+
+
