@@ -3,12 +3,18 @@
  */
 package org.example
 
-import kotlin.test.Test
-import kotlin.test.assertNotNull
+import org.junit.Test
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertEquals
 
 class AppTest {
     @Test fun appHasAGreeting() {
         val classUnderTest = App()
-        assertNotNull(classUnderTest.greeting, "app should have a greeting")
+        assertNotNull("app should have a greeting", classUnderTest.greeting)
+    }
+
+    @Test fun appSaysHello() {
+        val classUnderTest = App()
+        assertEquals("Hello", classUnderTest.sayHello())
     }
 }

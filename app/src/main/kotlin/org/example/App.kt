@@ -8,6 +8,10 @@ class App {
         get() {
             return "Hello World!"
         }
+
+    fun sayHello(): String {
+        return "Hello"
+    }
 }
 
 fun main() {
