@@ -1,60 +1,99 @@
 # GeminiSampleApp
-```mermaid
-sequenceDiagram
-        actor Developer
-        actor Gemini CLI
-        Developer->>Gemini CLI: Create a Sample App
-        Gemini CLI-->>Developer: Project Response
-        Developer->>Gemini CLI: Build Failed
-        Gemini CLI-->>Developer: Bugfix
+
+A minimal Android app built with **Jetpack Compose** and **Material 3**.
+
+The app currently has a single screen with:
+- a top app bar,
+- a floating action button (FAB),
+- and a simple text body.
+
+## Overview
+
+This repository is a single-module Android project intended as a small sample app.
+
+- Build system: Gradle (Kotlin DSL)
+- Language: Kotlin
+- UI: Jetpack Compose
+- Minimum SDK: 21
+- Target/Compile SDK: 34
+
+## Project Structure
+
+```text
+GeminiSampleApp/
+├── app/
+│   ├── build.gradle.kts
+│   └── src/
+│       ├── main/
+│       │   ├── AndroidManifest.xml
+│       │   ├── java/com/example/geminisampleapp/MainActivity.kt
+│       │   ├── kotlin/org/example/App.kt
+│       │   └── res/
+│       └── test/kotlin/org/example/AppTest.kt
+├── gradle/libs.versions.toml
+├── settings.gradle.kts
+└── README.md
 ```
 
-- Ask [Gemini CLI](https://github.com/google-gemini/gemini-cli) to generate an Android sample app containing scaffold, floating button and bottom navigation with two items
-<img width="1155" height="717" alt="截圖 2025-08-08 下午2 25 36" src="https://github.com/user-attachments/assets/cc9bfdae-1d7c-45a3-b785-81d91b164e6e" />
-<br/><br/><br/>
+## Main Runtime Flow
 
-- Gemini CLI starts to generate project files
-<img width="1146" height="650" alt="截圖 2025-08-08 下午2 28 11" src="https://github.com/user-attachments/assets/47694fff-9529-4926-b817-4b38663e47b6" />
-<br/><br/><br/>
+1. Launcher activity is declared in `app/src/main/AndroidManifest.xml`.
+2. `MainActivity` calls `setContent { MainScreen() }`.
+3. `MainScreen()` renders a `Scaffold` with top bar, FAB, and body content.
 
-- The following execution command will be ready for user
-<img width="1146" height="763" alt="截圖 2025-08-08 下午2 30 08" src="https://github.com/user-attachments/assets/4b0085c4-2e54-4942-8667-d327e945e064" />
-<br/><br/><br/>
+## Key Files
 
-- File Generated
-<img width="918" height="429" alt="截圖 2025-08-08 下午2 33 32" src="https://github.com/user-attachments/assets/9d94684a-daf9-4528-b8be-ed91719e7ab1" />
-<br/><br/><br/>
+- `app/src/main/java/com/example/geminisampleapp/MainActivity.kt`
+  - Contains `MainActivity`, `MainScreen()`, and preview.
+- `app/src/main/AndroidManifest.xml`
+  - Defines app metadata and launcher activity.
+- `app/build.gradle.kts`
+  - Android/Compose configuration and dependencies.
+- `gradle/libs.versions.toml`
+  - Plugin version catalog.
 
-- Build Failed
-<img width="941" height="632" alt="截圖 2025-08-08 下午2 50 49" src="https://github.com/user-attachments/assets/e4773760-e211-401c-84ca-7a6a77a30127" />
-<br/><br/><br/>
+## Build and Run
 
-- Bug Fixing...
-<img width="1334" height="716" alt="截圖 2025-08-11 上午8 11 21" src="https://github.com/user-attachments/assets/408bacb7-16a0-4697-8065-ca4fe95fcffa" />
-<br/><br/><br/>
+### Prerequisites
 
-- Repeat Bug Fixing...
-<img width="1336" height="715" alt="截圖 2025-08-11 上午8 12 41" src="https://github.com/user-attachments/assets/9a7e2faf-475a-4d5b-b9fe-2876c139c355" />
-<br/><br/><br/>
+- Android Studio (latest stable recommended)
+- Android SDK for API 34
+- JDK compatible with Android Gradle Plugin 8.2.0
 
-- Build Successful
-<img width="1329" height="777" alt="截圖 2025-08-11 上午8 15 26" src="https://github.com/user-attachments/assets/fe1d4a50-2f21-4988-8ec0-92992224ddbf" />
-<br/><br/><br/>
+### Build (CLI)
 
-- Install APK by command line tool (adb)
-<img width="840" height="853" alt="截圖 2025-08-11 上午8 23 09" src="https://github.com/user-attachments/assets/8427c8ff-a9c1-443c-b843-da878529ae57" />
-<br/><br/><br/>
+```bash
+./gradlew assembleDebug
+```
 
-- APK Installed
-<img width="1080" height="2400" alt="Screenshot_20250811_082411" src="https://github.com/user-attachments/assets/2f6a196d-93a7-49bb-aada-c6e02a4f88c7" />
-<br/><br/><br/>
+### Install to a connected device/emulator
 
-- Final Result: (No floating button and navigation details)
-<img width="1080" height="2400" alt="Screenshot_20250811_082436" src="https://github.com/user-attachments/assets/702fe3c8-1ddd-4b2a-8fef-eb980b960e53" />
+```bash
+./gradlew installDebug
+```
 
+Or run directly from Android Studio using the **app** run configuration.
 
+## Testing
 
-[Gemini Code Assist](https://developers.google.com/gemini-code-assist/docs/review-github-code)
-<img width="1406" height="711" alt="截圖 2025-09-05 上午11 47 10" src="https://github.com/user-attachments/assets/fb94fe64-5ca7-4329-987a-9640abd4dc2c" />
+Run unit tests:
 
+```bash
+./gradlew test
+```
 
+## Current Notes
+
+- The active Android app code is under:
+  - `app/src/main/java/com/example/geminisampleapp/`
+- There are leftover Gradle-init sample files under:
+  - `app/src/main/kotlin/org/example/`
+  - `app/src/test/kotlin/org/example/`
+
+These `org.example` files are scaffold artifacts and are not part of the main Android UI flow.
+
+## Future Improvements
+
+- Introduce package-level structure for UI/features/domain/data.
+- Replace scaffold artifact tests with tests targeting actual app behavior.
+- Add navigation and feature modules if the app grows.
